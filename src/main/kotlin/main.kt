@@ -12,7 +12,7 @@ fun main(args: Array<String>) {
     val repoDir = File(".")
     val git = Git.open(repoDir)
 
-    val oldTreeParser = prepareTreeParser(git.repository, "refs/heads/testbranch")
+    val oldTreeParser = prepareTreeParser(git.repository, "refs/heads/test")
     val newTreeParser = prepareTreeParser(git.repository, "refs/heads/master")
 
     val diff = git.diff().setOldTree(oldTreeParser).setNewTree(newTreeParser).call()
